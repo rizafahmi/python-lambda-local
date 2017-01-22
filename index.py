@@ -1,4 +1,5 @@
 import json
+from random import randint
 
 print('Loading function')
 
@@ -10,6 +11,7 @@ def lambda_handler(event, context):
     else:
         name = 'World'
 
-    greetings = 'Hello ' + name + '!'
+    randomizer = randint(0, 9)
+    greetings = 'Hello ' + name + '!' * randomizer
     print(greetings)
     return greetings
